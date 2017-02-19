@@ -9,15 +9,15 @@ namespace PHWDemo;
 use PDO;
 
 abstract class MyPDO{
-    // PDO²Ù×÷ÊµÀý
+    // PDOæ“ä½œå®žä¾‹
     protected $PDOStatement;
-    // ´íÎóÐÅÏ¢
+    // é”™è¯¯ä¿¡æ¯
     protected $error;
-    // µ±Ç°SQLÖ¸Áî
+    // å½“å‰SQLæŒ‡ä»¤
     protected $queryStr = '';
-    // µ±Ç°Á¬½Ó
+    // å½“å‰è¿žæŽ¥
     protected $link = null;
-    // Êý¾Ý¿âÁ¬½Ó²ÎÊýÅäÖÃ
+    // æ•°æ®åº“è¿žæŽ¥å‚æ•°é…ç½®
     protected $config = array(
         'type'      =>  '',
         'host'      =>  '127.0.0.1',
@@ -27,18 +27,18 @@ abstract class MyPDO{
         'port'      =>  '',
         'charset'   =>  "utf8"
     );
-    // PDOÁ¬½Ó²ÎÊý
+    // PDOè¿žæŽ¥å‚æ•°
     protected $options = array(
         PDO::ATTR_CASE              =>  PDO::CASE_LOWER,
         PDO::ATTR_ERRMODE           =>  PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_ORACLE_NULLS      =>  PDO::NULL_NATURAL,
         PDO::ATTR_STRINGIFY_FETCHES =>  false,
     );
-    // ²éÑ¯±í´ïÊ½
+    // æŸ¥è¯¢è¡¨è¾¾å¼
     protected $selectSql  = 'SELECT %FIELD% FROM %TABLE% %WHERE% %ORDER% %LIMIT%';
 
     /**
-     * ¹¹Ôìº¯Êý
+     * æž„é€ å‡½æ•°
      * @param string $config
      */
     public function __construct($config=''){
@@ -55,7 +55,7 @@ abstract class MyPDO{
                     $config['dsn']  =   $this->parseDsn($config);
                 }
                 if(version_compare(PHP_VERSION,'5.3.6','<=')){
-                    // ½ûÓÃÄ£ÄâÔ¤´¦ÀíÓï¾ä
+                    // ç¦ç”¨æ¨¡æ‹Ÿé¢„å¤„ç†è¯­å¥
                     $this->options[PDO::ATTR_EMULATE_PREPARES]  =   false;
                 }
                 $this->link = new PDO( $config['dsn'], $config['user'], $config['password'],$this->options);
@@ -68,7 +68,7 @@ abstract class MyPDO{
     }
 
     /**
-     * Ö´ÐÐ²éÑ¯ ·µ»ØÊý¾Ý¼¯
+     * æ‰§è¡ŒæŸ¥è¯¢ è¿”å›žæ•°æ®é›†
      * @param $str
      * @param bool|false $fetchSql
      * @return array|bool|string
@@ -85,7 +85,7 @@ abstract class MyPDO{
             return $this->queryStr;
         }
 
-        //ÊÍ·ÅÇ°´ÎµÄ²éÑ¯½á¹û
+        //é‡Šæ”¾å‰æ¬¡çš„æŸ¥è¯¢ç»“æžœ
         if ( !empty($this->PDOStatement) ){
             $this->free();
         }
@@ -104,8 +104,7 @@ abstract class MyPDO{
     }
 
     /**
-     * select ²éÑ¯
-     *
+     * select æŸ¥è¯¢
      * @param array $options
      * @return mixed
      */
@@ -116,9 +115,9 @@ abstract class MyPDO{
     }
 
     /**
-     * Éú³É²éÑ¯SQL
+     * ç”ŸæˆæŸ¥è¯¢SQL
      * @access public
-     * @param array $options ±í´ïÊ½
+     * @param array $options è¡¨è¾¾å¼
      * @return string
      */
     public function buildSelectSql($options=array()) {
@@ -127,9 +126,9 @@ abstract class MyPDO{
     }
 
     /**
-     * Ìæ»»SQLÓï¾äÖÐ±í´ïÊ½
+     * æ›¿æ¢SQLè¯­å¥ä¸­è¡¨è¾¾å¼
      * @access public
-     * @param array $options ±í´ïÊ½
+     * @param array $options è¡¨è¾¾å¼
      * @return string
      */
     public function parseSql($sql,$options=array()){
@@ -166,19 +165,19 @@ abstract class MyPDO{
     }
 
     /**
-     * »ñµÃËùÓÐµÄ²éÑ¯Êý¾Ý
+     * èŽ·å¾—æ‰€æœ‰çš„æŸ¥è¯¢æ•°æ®
      * @access private
      * @return array
      */
     private function getResult() {
-        //·µ»ØÊý¾Ý¼¯
+        //è¿”å›žæ•°æ®é›†
         $result = $this->PDOStatement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 
     /**
-     * Êý¾Ý¿â´íÎóÐÅÏ¢
-     * ²¢ÏÔÊ¾µ±Ç°µÄSQLÓï¾ä
+     * æ•°æ®åº“é”™è¯¯ä¿¡æ¯
+     * å¹¶æ˜¾ç¤ºå½“å‰çš„SQLè¯­å¥
      * @access public
      * @return string
      */
@@ -190,13 +189,13 @@ abstract class MyPDO{
             $this->error = '';
         }
         if('' != $this->queryStr){
-            $this->error .= "\n [ SQLÓï¾ä ] : ".$this->queryStr;
+            $this->error .= "\n [ SQLè¯­å¥ ] : ".$this->queryStr;
         }
         return $this->error;
     }
 
     /**
-     * ÊÍ·Å²éÑ¯½á¹û
+     * é‡Šæ”¾æŸ¥è¯¢ç»“æžœ
      * @access public
      */
     public function free() {
@@ -204,18 +203,18 @@ abstract class MyPDO{
     }
 
     /**
-     * ½âÎöÊý¾Ý¿âÁ¬½Ó×Ö¶Îdsn
+     * è§£æžæ•°æ®åº“è¿žæŽ¥å­—æ®µdsn
      * @param $config
      */
     protected function parseDsn($config){}
 
     /**
-     * __clone ·À¿ËÂ¡
+     * __clone é˜²å…‹éš†
      */
     public function __clone(){}
 
     /**
-     * destruct ¹Ø±ÕÊý¾Ý¿âÁ¬½Ó
+     * destruct å…³é—­æ•°æ®åº“è¿žæŽ¥
      */
     public function __destruct(){
         $this->link = null;
