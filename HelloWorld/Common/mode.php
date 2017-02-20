@@ -11,6 +11,8 @@ return array(
     ),
 
     'common' => array(
-        COMMON_PATH . 'functions' . CONF_EXT
+        COMMON_PATH . 'functions' . CONF_EXT,
+        WORLD_PATH . 'App' . EXT,
+        LIB_PATH . 'Log/Log' . EXT
     )
 );

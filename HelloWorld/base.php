@@ -13,6 +13,7 @@ defined('CONF_EXT')     or define('CONF_EXT','.php'); //公共文件后缀
 
 // 加载核心类
 require WORLD_PATH.'World'.EXT;
+
 // 应用初始化
 World::start();
 

@@ -24,11 +24,14 @@ class World{
             // 加载应用模式配置文件
             foreach ($mode['config'] as $file){
                 if(is_file($file)) {
-                    include $file;
+                    C(include $file);
                 }
             }
         }
 
+        // 实例化日志类
+        $logHandler = new CLogFileHandler(ROOT_PATH . "/Log/" . date('Y-m-d') . '.log');
+        Log::Init($logHandler);
 
         App::run();
     }
@@ -51,13 +54,5 @@ class World{
                 include $filename;
             }
         }
-
-        //加载日志文件
-        include LIB_PATH . "Class/Log" . EXT;;
-
-        //引入app类
-        include "App".EXT;
     }
-
-
 }

@@ -5,7 +5,7 @@
  * Date: 2017/1/22
  * Time: 23:03
  */
-$config = array(
+return array(
     'type'      =>  'mysql',
     'host'      =>  '127.0.0.1',
     'dbname'    =>  'test',

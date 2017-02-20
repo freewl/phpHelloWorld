@@ -5,8 +5,8 @@
  * Date: 2017/1/22
  * Time: 23:01
  */
-namespace PHWDemo;
-use PDO;
+//namespace PHWDemo;
+//use PDO;
 
 abstract class MyPDO{
     // PDO操作实例
@@ -43,7 +43,8 @@ abstract class MyPDO{
      */
     public function __construct($config=''){
         if(!empty($config)){
-            $this->config = array_merge($this->config,$config);
+            $this->config = array_merge(array_change_key_case($this->config,CASE_UPPER),$config);
+            $this->config = array_change_key_case($this->config,CASE_LOWER);
         }
     }
 
@@ -75,6 +76,7 @@ abstract class MyPDO{
      * @throws \Exception
      */
     public function query($str,$fetchSql=false) {
+        print_r($this->config);
         $this->connect($this->config);
         if ( !$this->link ){
             return false;

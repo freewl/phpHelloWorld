@@ -5,7 +5,7 @@
  * Date: 2017/1/22
  * Time: 23:01
  */
-namespace PHWDemo;
+//namespace PHWDemo;
 
 class Mysql extends MyPDO{
     /**
