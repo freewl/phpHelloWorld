@@ -1,0 +1,11 @@
+CREATE DATABASE `test` /*!40100 COLLATE 'utf8_general_ci' */;
+
+CREATE TABLE `test` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(50) NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
+ENGINE=MyISAM
+;
+
+
