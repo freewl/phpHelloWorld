@@ -1,20 +1,43 @@
 <?php
+/**
+ * å®šä¹‰ç½‘ç«™æ ¹ç›®å½•
+ */
+define('ROOT_PATH', dirname(__FILE__));
+define("APP_PATH",'./Application/');
+
+require "./HelloWorld/base.php";
 
 /**
- * ÒıÈëlog¿âÎÄ¼ş
+ * åˆå§‹åŒ–æ—¥å¿—handler
  */
-require_once './include/log.php';
-
-/**
- * ³õÊ¼»¯ÈÕÖ¾handler
- */
-$logHandler = new CLogFileHandler("log/".date('Y-m-d').'.log');
-Log::Init($logHandler, 15);
+/*$logHandler = new \CLogFileHandler("Log/".date('Y-m-d').'.log');
+\Log::Init($logHandler, 15);*/
 
 
 /**
- * ÒµÎñÂß¼­´úÂë
+ * ä¸šåŠ¡é€»è¾‘ä»£ç 
  */
-Log::INFO("Ö»ÊÇÒ»¸öÈÕÖ¾");
+/*\Log::INFO("åªæ˜¯ä¸€ä¸ªæ—¥å¿—");*/
 
-?>
+
+
+/*$config = array(
+    'type'      =>  'mysql',
+    'host'      =>  '127.0.0.1',
+    'dbname'    =>  'test',
+    'user'      =>  'root',
+    'password'  =>  'freewl',
+    'port'      =>  '3306',
+    'charset'   =>  'utf8'
+);
+require_once "./HelloWorld/Lib/Class/MyPDO.class.php";
+require_once "./HelloWorld/Lib/Class/Mysql.class.php";
+$mysql = new Mysql($config);
+
+try {
+    $data = $mysql->query("select * from test");
+    print_r($data);
+}catch(Exception $e){
+    print_r($e->getMessage());
+}*/
+
