@@ -4,17 +4,17 @@ const EXT = '.class.php';
 
 define('PHP_HELLO_WORLD', true);
 
-defined('HELLO_WORLD_PATH') or define('HELLO_WORLD_PATH',__DIR__.'/');// HelloWorldÂ·¾¶
-defined('WORLD_PATH') or define('WORLD_PATH', HELLO_WORLD_PATH.'World/');// HelloWorld/WorldÂ·¾¶
-defined('LIB_PATH') or define('LIB_PATH', HELLO_WORLD_PATH.'Lib/');// HelloWorld/LibÂ·¾¶
-defined('COMMON_PATH') or define('COMMON_PATH', HELLO_WORLD_PATH.'Common/');// HelloWorld/LibÂ·¾¶
+defined('HELLO_WORLD_PATH') or define('HELLO_WORLD_PATH',__DIR__.'/');// HelloWorldè·¯å¾„
+defined('WORLD_PATH') or define('WORLD_PATH', HELLO_WORLD_PATH.'World/');// HelloWorld/Worldè·¯å¾„
+defined('LIB_PATH') or define('LIB_PATH', HELLO_WORLD_PATH.'Lib/');// HelloWorld/Libè·¯å¾„
+defined('COMMON_PATH') or define('COMMON_PATH', HELLO_WORLD_PATH.'Common/');// HelloWorld/Libè·¯å¾„
 
-defined('CONF_EXT')     or define('CONF_EXT','.php'); //¹«¹²ÎÄ¼şºó×º
+defined('CONF_EXT')     or define('CONF_EXT','.php'); //å…¬å…±æ–‡ä»¶åç¼€
 
-// ¼ÓÔØºËĞÄÀà
+// åŠ è½½æ ¸å¿ƒç±»
 require WORLD_PATH.'World'.EXT;
 
-// Ó¦ÓÃ³õÊ¼»¯
+// åº”ç”¨åˆå§‹åŒ–
 World::start();
 
 

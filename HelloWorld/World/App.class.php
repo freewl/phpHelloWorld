@@ -7,7 +7,7 @@
  */
 class App {
     static public function run(){
-        Log::INFO("run: Ö»ÊÇÒ»¸öÈÕÖ¾");
+        Log::INFO("run: åªæ˜¯ä¸€ä¸ªæ—¥å¿—");
 
         $m=$_REQUEST['m'];
         $c=$_REQUEST['c'];

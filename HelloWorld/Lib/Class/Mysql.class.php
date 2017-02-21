@@ -9,7 +9,7 @@
 
 class Mysql extends MyPDO{
     /**
-     * 解析数据库连接字段dsn
+     * 瑙ｆ瀽鏁版嵁搴撹繛鎺ュ瓧娈礵sn
      *
      * @param $config
      * @return string

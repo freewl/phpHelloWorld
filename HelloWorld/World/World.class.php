@@ -7,21 +7,21 @@
  */
 class World{
     static public function start(){
-        //注册autoload方法
+        //娉ㄥ唽autoload鏂规硶
         spl_autoload_register('World::autoload');
 
-        //读取应用模式
+        //璇诲彇搴旂敤妯″紡
         if(is_file(COMMON_PATH.'mode.php')){
             $mode   =   include COMMON_PATH.'mode.php';
 
-            // 加载核心文件
+            // 鍔犺浇鏍稿績鏂囦欢
             foreach ($mode['common'] as $file){
                 if(is_file($file)) {
                     include $file;
                 }
             }
 
-            // 加载应用模式配置文件
+            // 鍔犺浇搴旂敤妯″紡閰嶇疆鏂囦欢
             foreach ($mode['config'] as $file){
                 if(is_file($file)) {
                     C(include $file);
@@ -29,7 +29,7 @@ class World{
             }
         }
 
-        // 实例化日志类
+        // 瀹炰緥鍖栨棩蹇楃被
         $logHandler = new CLogFileHandler(ROOT_PATH . "/Log/" . date('Y-m-d') . '.log');
         Log::Init($logHandler);
 
@@ -37,7 +37,7 @@ class World{
     }
 
     static public function autoload($class){
-        //加载应用程序
+        //鍔犺浇搴旂敤绋嬪簭
         $appSubPathList = array("Demo");
         foreach($appSubPathList as $key => $value){
             $filename = APP_PATH . $value ."/". $class . EXT;
@@ -46,7 +46,7 @@ class World{
             }
         }
 
-        //加载类库
+        //鍔犺浇绫诲簱
         $libSubPathList = array("Class",'Data');
         foreach($libSubPathList as $key => $value){
             $filename = LIB_PATH . $value ."/". $class . EXT;
