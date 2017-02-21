@@ -2,19 +2,19 @@ git clone
 git commit
 git push
 
-µ¥Ò»Èë¿Ú
-ÒýÈëÎÄ¼þ,È»ºóµ÷ÓÃÀà
-×Ô¶¯¼ÓÔØÀà¿â
-ÔËÐÐÊµÀýDemo/Test
-PDO·â×°·ÃÎÊÊý¾Ý¿â·½·¨
+å•ä¸€å…¥å£
+å¼•å…¥æ–‡ä»¶,ç„¶åŽè°ƒç”¨ç±»
+è‡ªåŠ¨åŠ è½½ç±»åº“
+è¿è¡Œå®žä¾‹Demo/Test
+PDOå°è£…è®¿é—®æ•°æ®åº“æ–¹æ³•
 
 
-½âÎöurl
-µ÷ÓÃ¶ÔÓ¦µÄÀàÖÐµÄ·½·¨(»òÍ¨¹ý·´Éä»úÖÆµ÷ÓÃ)
-VendorÀïµÄÐèÒªµ÷ÓÃÊ±ÔÙ¼ÓÔØ
-(¶ÔÓ¦Êý¾Ý¿â±í.ÊµÌå)Ä£ÐÍ²ã,Êý¾Ý·ÃÎÊ²ã,¶¨ÒåÁ¬¹á·½·¨,·Àsql×¢Èë¹ýÂË
-¼àÌý»úÖÆ
-»º´æ
-Ä£°åSmarty
-debugÄ£Ê½/runÄ£Ê½(Éú³ÉruntimeÎÄ¼þ,°üº¬ËùÓÐÐèÒª¼ÓÔØµÄÈ«¾ÖphpÎÄ¼þ.ÅäÖÃ.Í¨ÓÃ·½·¨µÈ)
+è§£æžurl
+è°ƒç”¨å¯¹åº”çš„ç±»ä¸­çš„æ–¹æ³•(æˆ–é€šè¿‡åå°„æœºåˆ¶è°ƒç”¨)
+Vendoré‡Œçš„éœ€è¦è°ƒç”¨æ—¶å†åŠ è½½
+(å¯¹åº”æ•°æ®åº“è¡¨.å®žä½“)æ¨¡åž‹å±‚,æ•°æ®è®¿é—®å±‚,å®šä¹‰è¿žè´¯æ–¹æ³•,é˜²sqlæ³¨å…¥è¿‡æ»¤
+ç›‘å¬æœºåˆ¶
+ç¼“å­˜
+æ¨¡æ¿Smarty
+debugæ¨¡å¼/runæ¨¡å¼(ç”Ÿæˆruntimeæ–‡ä»¶,åŒ…å«æ‰€æœ‰éœ€è¦åŠ è½½çš„å…¨å±€phpæ–‡ä»¶.é…ç½®.é€šç”¨æ–¹æ³•ç­‰)
 
