@@ -1,12 +1,16 @@
 git clone
-git commit
+git commit -am "程序注释"
 git push
+
+
 
 单一入口
 引入文件,然后调用类
 自动加载类库
 运行实例Demo/Test
 PDO封装访问数据库方法
+模板Smarty：对比thinkphp controller里的display方法.display方法可以封装到controller基类里。
+
 
 
 解析url
@@ -15,6 +19,11 @@ Vendor里的需要调用时再加载
 (对应数据库表.实体)模型层,数据访问层,定义连贯方法,防sql注入过滤
 监听机制
 缓存
-模板Smarty
 debug模式/run模式(生成runtime文件,包含所有需要加载的全局php文件.配置.通用方法等)
 
+
+
+
+url:
+==========
+http://127.0.0.1/phpHelloWorld/index.php?m=Demo&c=Test&a=test;

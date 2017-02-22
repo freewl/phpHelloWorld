@@ -33,7 +33,7 @@ class TestController{
 
         $smarty->caching = Smarty::CACHING_LIFETIME_CURRENT;
         $smarty->assign('who', 'Smarty');
-        $smarty->display('index.html');
+        $smarty->display('index.html'); //对比thinkphp controller里的display方法。 $this->display();
 
         echo "success get data from test DB";
     }
