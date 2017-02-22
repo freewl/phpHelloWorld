@@ -8,6 +8,7 @@ defined('HELLO_WORLD_PATH') or define('HELLO_WORLD_PATH',__DIR__.'/');// HelloWo
 defined('WORLD_PATH') or define('WORLD_PATH', HELLO_WORLD_PATH.'World/');// HelloWorld/World路径
 defined('LIB_PATH') or define('LIB_PATH', HELLO_WORLD_PATH.'Lib/');// HelloWorld/Lib路径
 defined('COMMON_PATH') or define('COMMON_PATH', HELLO_WORLD_PATH.'Common/');// HelloWorld/Lib路径
+defined('VENDOR_PATH') or define('VENDOR_PATH', HELLO_WORLD_PATH.'Vendor/');// HelloWorld/Lib路径
 
 defined('CONF_EXT')     or define('CONF_EXT','.php'); //公共文件后缀
 
