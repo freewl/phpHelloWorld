@@ -30,7 +30,7 @@ class World{
         }
 
         // 实例化日志类
-        $logHandler = new CLogFileHandler(ROOT_PATH . "/Log/" . date('Y-m-d') . '.log');
+        $logHandler = new CLogFileHandler(ROOT_PATH . "/Logs/" . date('Y-m-d') . '.log');
         Log::Init($logHandler);
 
         App::run();

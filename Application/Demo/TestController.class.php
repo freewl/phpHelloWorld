@@ -14,13 +14,14 @@ class TestController{
     }
 
     public function test(){
+        \Log::INFO("start run test method");
         $mysql = new Mysql(C(""));
 
         try {
             $data = $mysql->query("select * from test");
-            print_r($data);
+            \Log::INFO("查询test数据库 res = " . json_encode($data));
         }catch(Exception $e){
-            print_r($e->getMessage());
+            \Log::INFO("查询test数据库失败 res = " . json_encode($e->getMessage()));
         }
 
         $smarty  = new Smarty();
@@ -28,13 +29,9 @@ class TestController{
         $smarty->setCompileDir(APP_PATH.'View/compile/');
         //$this->setConfigDir('/web/www.example.com/guestbook/configs/');
         $smarty->setCacheDir(APP_PATH.'View/cache/');
-
-
-
         $smarty->caching = Smarty::CACHING_LIFETIME_CURRENT;
         $smarty->assign('who', 'Smarty');
-        $smarty->display('index.html'); //对比thinkphp controller里的display方法。 $this->display();
-
-        echo "success get data from test DB";
+        $smarty->display('index.html'); //对比thinkphp controller里的display方法。 $this-{
+        \Log::INFO("end run test method");
     }
 }
